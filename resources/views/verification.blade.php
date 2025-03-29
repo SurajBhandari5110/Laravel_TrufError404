@@ -52,13 +52,13 @@
             font-size: 16px;
         }
         .otp-input:focus {
-            border-color: #007bff;
+            border-color: #10b981;
             outline: none;
         }
         .btn {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #10b981;
             color: #fff;
             border: none;
             border-radius: 4px;

@@ -192,7 +192,7 @@
 
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="{{ route('home') }}" class="logo">HuLang</a>
+        <a href="{{ route('home') }}" class="logo">Truf</a>
         <div class="search-bar">
             <input type="text" placeholder="Search HuLang...">
         </div>
@@ -203,11 +203,11 @@
             </a>
             <a href="#" class="nav-item">
                 <img src="{{ asset('icons/users.svg') }}" alt="My Connections Icon">
-                <span>My Connections</span>
+                <span></span> Connections</span>
             </a>
             <a href="#" class="nav-item">
                 <img src="{{ asset('icons/briefcase.svg') }}" alt="Jobs Icon">
-                <span>Jobs</span>
+                <span>Contact Us</span>
             </a>
             <div class="nav-item profile-item">
                 <div class="profile-pic">{{ substr(auth()->user()->name, 0, 1) }}</div>
@@ -223,10 +223,7 @@
                     </form>
                 </div>
             </div>
-            <a href="#" class="nav-item">
-                <img src="{{ asset('icons/grid.svg') }}" alt="Workspace Icon">
-                <span>Workspace</span>
-            </a>
+            
         </div>
     </nav>
 
@@ -236,36 +233,8 @@
             <h1>Hi {{ auth()->user()->name }}</h1>
             <p>Quick stats, bio, or recent activity can go here.</p>
         </div>
-        <div class="main-content">
-            <h3>Activity Feed</h3>
-            <p>Post updates, shared code, or community interactions here.</p>
-        </div>
-        <div class="right-bar">
-            <h3>Suggestions</h3>
-            <p>Job recommendations, connections, or trending projects.</p>
-        </div>
+        
     </section>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 60, density: { enable: true, value_area: 800 } },
-                color: { value: '#00ddeb' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: '#ff006e', opacity: 0.4, width: 1 },
-                move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out' }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
-                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
-            },
-            retina_detect: true
-        });
-    </script>
 </body>
 </html>

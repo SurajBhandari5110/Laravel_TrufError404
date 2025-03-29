@@ -29,38 +29,48 @@
         .form-container {
             background-color: #fff;
             border: 1px solid #dbdbdb;
-            padding: 20px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 10px;
         }
-        .form-container input {
+        .form-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-container input, .form-container select {
             width: 100%;
             padding: 10px;
-            margin: 5px 0;
+            margin: 8px 0;
             border: 1px solid #dbdbdb;
-            border-radius: 3px;
+            border-radius: 5px;
             background: #fafafa;
         }
-        .form-container input:focus {
+        .form-container input:focus, .form-container select:focus {
             outline: none;
             border-color: #a8a8a8;
         }
         .form-container input[type="submit"] {
-            background-color: #0095f6;
+            background-color: #10b981;
             color: #fff;
             border: none;
             cursor: pointer;
             font-weight: bold;
+            border-radius: 5px;
+            padding: 12px;
         }
         .form-container input[type="submit"]:hover {
-            background-color: #007dc1;
+            background-color: #10b981;
         }
         .login-container {
             background-color: #fff;
             border: 1px solid #dbdbdb;
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
         .login-container a {
-            color: #0095f6;
+            color: #10b981;
             text-decoration: none;
             font-weight: bold;
         }
@@ -74,6 +84,13 @@
         .success-message {
             color: green;
             margin: 10px 0;
+        }
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            text-align: left;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -95,12 +112,17 @@
                 <p class="success-message">{{ Session::get('success') }}</p>
             @endif
 
-            <form action="{{ route('studentRegister') }}" method="POST">
+            <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <input type="text" name="name" placeholder="Enter Name" required>
                 <input type="email" name="email" placeholder="Enter Email" required>
                 <input type="password" name="password" placeholder="Enter Password" required>
                 <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
+                <label for="user_type">Register as:</label>
+                <select name="user_type" id="user_type" required>
+                    <option value="player">Player</option>
+                    <option value="manager">Manager</option>
+                </select>
                 <input type="submit" value="Register">
             </form>
         </div>
